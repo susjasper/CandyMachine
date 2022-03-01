@@ -1,0 +1,133 @@
+package SusCandyMachine;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+
+public class CandyMachine {
+
+public static void main(String [] args) 
+{
+ //Candy Machine
+Scanner scanner = new Scanner(System.in);
+
+//Given products:
+
+//intro
+System.out.println("[BSIT1B-CANDY MACHINE]");
+System.out.println("\nList of categories:\n");
+
+ArrayList Items = new ArrayList();
+Items.add("\tCandies");
+Items.add("\tChips");
+Items.add("\tGums");
+Items.add("\tCookies");
+System.out.println(Items);
+
+String candies = ("strawberryflavor(1), limefalvor(2), chocolateflavor(3)");
+String chips = ("cornchip(16), bananachip(8), potatochip(28)");
+String gums = ("bluegum(6), mintgum(5), redgum(15)");
+String cookies = ("cookies(26), curls(11), knots(10)");
+
+System.out.println("\nPlease select a category.");
+String c = scanner.nextLine();
+
+  if (c.equalsIgnoreCase("candies")){
+  System.out.println("\nHere are the available products:\n " + "\n" + candies);
+  } else if(c.equalsIgnoreCase("chips"))
+    System.out.println("\nHere are the available products.\nEnter the price to select the product:\n " + "\n" + chips);
+   else if(c.equalsIgnoreCase("gums"))
+    System.out.println("Here are the available products:\nEnter the price to select the product:\n " + "\n" + gums);
+   else if(c.equalsIgnoreCase("cookies"))
+    System.out.println("\bHere are the available products:\nEnter the price to select the product:\n " + "\n" + cookies);
+   else
+    System.out.println("The category you selected is not on the selection. \nPlease try again.");
+  
+  
+// Candies 
+  int Strawberryflavor = 1;
+  int Limeflavor = 2;
+  int Chocolateflavor= 3;
+  
+// Chips
+  int Cornchip = 16;
+  int Bananachip = 8;
+  int Potatochip = 28;
+
+// Gums
+  int Bluegum = 6;
+  int Mintgum = 5;
+  int Redgum = 15;
+
+// Cookies
+  int Cookies = 26;
+  int Curls = 11;
+  int Knots = 10;
+
+// Selecting product
+
+  System.out.print("");
+  int p = scanner.nextInt();
+
+  if (p == 1 ){
+  System.out.println("\nStrawberryflavor is " + Strawberryflavor + " peso." + "\nProceed purchase? (Yes/No)");
+  } 
+  else if (p == 2 )
+  System.out.println("\nLimeflavor is " + Limeflavor + " peso. " + "\nProceed purchase? (Yes/No)");
+   else if (p == 3 )
+  System.out.println("\nChocolateflavor is " + Chocolateflavor + " pesos." + "\nProceed purchase? (Yes/No)");
+   else if (p == 16 )
+  System.out.println("\nCornchip is " + Cornchip + " pesos. " + "\nProceed purchase? (Yes/No)");
+   else if (p == 8 )
+  System.out.println("\nBananachip is " + Bananachip + " pesos. " + "\nProceed purchase? (Yes/No)");
+   else if (p == 28 )
+  System.out.println("\nPotatochip is " + Potatochip + " pesos. " + "\nProceed purchase? (Yes/No)");
+   else if (p == 6 )
+  System.out.println("\nBluegum is " + Bluegum + " peso. " + "\nProceed purchase? (Yes/No)");
+   else if (p == 5 )
+  System.out.println("\nMintgum is " + Mintgum + " peso. " + "\nProceed purchase? (Yes/No)");
+   else if (p == 15 )
+  System.out.println("\nRedgum is " + Redgum + " pesos. " + "\nProceed purchase? (Yes/No)");
+   else if (p == 26 )
+  System.out.println("\nCookies is " + Cookies + " pesos. " + "\nProceed purchase? (Yes/No)");
+   else if (p == 11 )
+  System.out.println("\nCurls is " + Curls + " pesos. " + "\nProceed purchase? (Yes/No)");
+   else if (p == 10 )
+  System.out.println("\nKnots is " + Knots + " pesos. " + "\nProceed purchase? (Yes/No)");
+   else 
+    System.out.println("The number you entered is not on the selection.");
+  
+
+//Payment and Releasing of product
+
+
+  
+  System.out.println("");
+  String answer = scanner.next();
+  
+  String pay = "Yes";
+  String cancel = "No";
+  
+  
+  if (answer.equalsIgnoreCase(pay)){
+    System.out.println("Please input your payment(0-50): ");
+  } else if (answer.equalsIgnoreCase(cancel)){
+    System.out.println("Thank You. Have a nice day!");
+  } else{
+    System.out.println("The characters you entered is not on the selection. Please try again.");
+  }
+    
+//Payment processing   
+  
+  System.out.println("");
+ int payment = scanner.nextInt();
+  
+  if (payment >= 0 && payment <= 50){
+   System.out.println("Item Released!Thank you for purchasing this item.\nYour change: " + (payment - p));
+  } else{
+   System.out.println("We cannot process this amount.");
+  }
+  
+}
+}
